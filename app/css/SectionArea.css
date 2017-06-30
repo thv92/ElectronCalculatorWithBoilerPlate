@@ -1,0 +1,14 @@
+.sectionArea {
+    position: absolute;
+    height: 37%;
+    width: 84.4%;
+    left: 14.5%;
+    bottom: 0;
+    z-index: .9;
+    background: #ff8f00;
+    padding-left: 2%;
+    padding-bottom: 5%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+}
