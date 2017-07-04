@@ -1,14 +1,27 @@
 .sectionArea {
-    position: absolute;
-    height: 37%;
-    width: 84.4%;
-    left: 14.5%;
-    bottom: 0;
-    z-index: .9;
-    background: #ff8f00;
-    padding-left: 2%;
-    padding-bottom: 5%;
+    position:absolute;
+    height: 100%; /* 100% Full-height */
+    width: 15%; /* 0 width - change this with JavaScript */
+    left: 15%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    background-color: cornflowerblue; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
     overflow-x: hidden;
     overflow-y: scroll;
-    
+}
+
+
+.sectionArea ul {
+    padding-left: 0;
+}
+.sectionArea li {
+    padding: 8% 8% 8% 8%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: antiquewhite;
+    display: block;
 }

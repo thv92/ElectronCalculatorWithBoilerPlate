@@ -1,18 +1,28 @@
 import { connect } from 'react-redux';
-import { bindActionCreator } from 'redux';
+import { bindActionCreators } from 'redux';
 import SectionArea from '../components/SectionArea';
-
+import { itemClicked } from '../actions/activeitem';
 
 const getActiveSectionItems = (activeSection, sectionItems) => {
-    console.log("ACTIVE SECTION: ", activeSection)
     return sectionItems[activeSection];
+}
+
+const getActiveSectionItemPrices = (activeSection, sectionItemsToPriceMapping) => {
+    return sectionItemsToPriceMapping[activeSection];
 }
 
 function mapStateToProps(state) {
     return {
         items: getActiveSectionItems(state.activeSection, state.sectionItems),
-        sectionName: state.activeSection
+        itemPrices: getActiveSectionItemPrices(state.activeSection, state.sectionItemPrice),
+        sectionName: state.activeSection,
+        activeItem: state.activeItem[state.activeSection]
     };
 }
 
-export default connect(mapStateToProps)(SectionArea);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ itemClicked }, dispatch);
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SectionArea);
