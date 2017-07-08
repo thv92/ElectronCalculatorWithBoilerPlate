@@ -33,11 +33,11 @@ export default class SectionList extends Component {
             // console.log("that: " + that);
 
             return <li 
-                    key={_.uniqueId(`section_list_${section}_`)}>
+                    key={_.uniqueId(`section_list_${section}_`)}
+                    onClick={() => this.props.activeTab(section)}>
                 <SectionTab
                 name={section}
-                className={styles.sectionTab}
-                onClick={() => this.props.activeTab(section)} /></li>;
+                className={styles.sectionTab} /></li>;
         }, this);
 
         return (

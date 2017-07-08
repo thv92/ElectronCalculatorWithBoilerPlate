@@ -10,14 +10,19 @@ export default class SectionArea extends Component {
         console.log("this.props.activeItem: ", this.props.activeItem);
 
         if (this.props.items) {
-
             const sectionItems = this.props.items.map(function (item, index) {
-                return <li key={_.uniqueId(`${this.props.sectionName}_${item}`)}>
+            const itemIsSelected = 
+            (!this.props.activeItem || this.props.activeItem[item] == 'undefined' || !this.props.activeItem[item]) ? false : true;
+                console.log("ITEM: " + item  + " SELECTED: " + itemIsSelected);
+                
+                return <li key={_.uniqueId(`${this.props.sectionName}_${item}`)}
+                           className={itemIsSelected ? styles.selected : styles.notSelected}
+                           onClick={() => this.props.itemClicked(this.props.sectionName, item)}>
                     <SectionItem
                         sectionName={this.props.sectionName}
                         name={item}
                         price={this.props.itemPrices[item]} 
-                        onClick={() => this.props.itemClicked(this.props.sectionName, item)} />
+                        />
                 </li>
             }, this);
             body = <ul>{sectionItems}</ul>;
@@ -27,7 +32,6 @@ export default class SectionArea extends Component {
 
         return (
             <div className={styles.sectionArea}>
-                <h1>Hello Area!</h1>
                 {body}
             </div>
         );

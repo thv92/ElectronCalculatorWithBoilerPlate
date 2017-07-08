@@ -1,5 +1,4 @@
 .sectionArea {
-    position:absolute;
     height: 100%; /* 100% Full-height */
     width: 15%; /* 0 width - change this with JavaScript */
     left: 15%;
@@ -24,4 +23,24 @@
     font-size: 25px;
     color: antiquewhite;
     display: block;
+    border-bottom: solid;
+}
+
+.sectionArea h2 {
+    text-align: center;
+}
+
+.sectionArea li:hover, li:focus {
+    cursor: pointer;
+    color: #f1f1f1;
+}
+
+.selected {
+    background-color: darkslateblue;
+}
+
+
+
+.notSelected {
+    background-color: inherit;
 }
